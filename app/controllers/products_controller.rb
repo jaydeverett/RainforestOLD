@@ -15,11 +15,9 @@ class ProductsController < ApplicationController
     @product.price_in_cents = params[:product][:price_in_cents]
 
     if @product.save
-      flash.now[:notice] = 'Product created successfully!'
       redirect_to '/products'
 
     else
-      flash.now[:notice] = 'Sorry. That did not work.'
       render :new
     end
 
@@ -51,4 +49,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price_in_cents)
   end
+
 end
