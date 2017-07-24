@@ -1,0 +1,6 @@
+<h1><%= @product.name %></h1>
+
+<%= render 'single_product', single_product: @product %>
+
+<%= link_to 'Edit', edit_product_path %> |
+<%= link_to 'Delete', product_path(@product), method: :delete, data: {confirm: "Are you sure you want to delete the product '#{@product.name}'? This cannot be undone!"} %>
