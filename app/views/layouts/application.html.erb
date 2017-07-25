@@ -9,7 +9,15 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New Product", new_product_path %></li>
+      </ul>
+    </nav>
+
     <%= yield %>
+
 
     <% if flash[:notice] %>
       <p class="notice"><%= flash[:notice] %></p>
