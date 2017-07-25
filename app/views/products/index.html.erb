@@ -1,7 +1,20 @@
+<div class="showpage">
+
+
 <h1>Products</h1>
+<div class="newproductbutton">
 <%= link_to("New Product", "/products/new") %>
+</div>
+
+
 
 <% @products.each do |product| %>
+<div class="eachproduct">
 <p><%= product.name %> | <%= product.description %> | <%= product.price_in_dollars %></p>
 <%= link_to("Show More", "/products/#{product.id}") %>
+</div>
 <% end %>
+
+
+
+</div>

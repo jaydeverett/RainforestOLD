@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+
+nav {
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  border: 2px solid red;
+  padding: 0px 5px;
+  margin: 0px 8px 8px 0;
+  text-align: center
+}
+
+nav ul li:hover {
+  background-color: red;
+}
+
+ h1  {
+   border: 5px solid black;
+   text-align: center;
+   font-family: 'Inconsolata', monospace;
+   background: #E8E57A
+ }
+
+.showpage {
+  font-family: 'Inconsolata', monospace;
+}
+
+.newproductbutton {
+  border: 2px solid black;
+  display: block;
+  background: #E8E57A;
+  margin: 10px 0;
+}
+
+.eachproduct {
+  border: 2px solid black;
+  margin: 2px 0;
+  background: #B3B8B6;
+}
