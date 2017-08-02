@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     @product.price_in_cents = params[:product][:price_in_cents]
 
     if @product.save
-      flash[:notice] = "Product successfully created"  
+      flash[:notice] = "Product successfully created"
       redirect_to '/products'
 
     else
@@ -48,6 +48,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @review = Review.new
   end
 
   def product_params

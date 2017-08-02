@@ -11,6 +11,7 @@
 <% @products.each do |product| %>
 <div class="eachproduct">
 <p><%= product.name %> | <%= product.description %> | <%= product.price_in_dollars %></p>
+<p>Reviews: <%= product.reviews.count %></p>
 <%= link_to("Show More", "/products/#{product.id}") %>
 </div>
 <% end %>
