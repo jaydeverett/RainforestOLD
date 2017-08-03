@@ -1,0 +1,4 @@
+<h1>Edit your review</h1>
+<%= render '/reviews/form', product: @product %>
+
+<%= link_to("Delete", product_review_path(@product.id,@review.id), method: :delete, data: {confirm: "Are you sure you want to delete your review?"})  %>

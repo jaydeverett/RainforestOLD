@@ -4,10 +4,21 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @product = Product.all
+    @product = Product.find(params[:product_id])
     @review = Review.all
-    redirect_to product_path
+    render product_reviews_path
   end
+
+ def show
+   @product = Product.find(params[:product_id])
+   @review = Review.find(params[:id])
+   render :show
+ end
+
+def edit
+  @product = Product.find(params[:product_id])
+  @review = Review.find(params[:id])
+end
 
   def create
     @product = Product.find(params[:product_id])
@@ -21,6 +32,17 @@ class ReviewsController < ApplicationController
     else
       flash[:notice] = "Something went wrong"
       render :new
+    end
+  end
+
+  def update
+    @review = Review.find(params[:id])
+
+    if @review.update(comment: params[:review][:comment])
+      flash[:notice] = "You have successfully updated a review."
+      redirect_to product_path
+    else
+      render :edit
     end
   end
 end

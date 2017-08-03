@@ -8,30 +8,10 @@
 <h2>Reviews</h2>
 <% @product.reviews.each do |review|%>
 <ul>
-  <li><%= review.name %>: <%= review.comment %></li>
+  <li><%= review.comment %></li>
 </ul>
 <% end %>
 
 <h4>Add a review</h4>
 
-<%= form_for([@product, @review]) do |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-      <ul>
-      <% @review.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render '/reviews/form', product: @product %>
